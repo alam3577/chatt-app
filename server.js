@@ -6,7 +6,7 @@ const http = require("http");
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 const io = socketIo(server);
 
@@ -36,6 +36,6 @@ io.on("connection", async (socket) => {
   });
 });
 
-server.listen(PORT, () => {
+server.listen(port, () => {
   console.log(`Server is running to the port ${PORT}`);
 });
