@@ -19,6 +19,7 @@ io.on("connection", async (socket) => {
     await socket.emit("joined", {
       message: `${users[socket.id]} welcome to the chat`,
     });
+    await io.emit("onlineUser", { user });
     // await socket.broadcast.emit("joined-message", {
     //   mesage: `${users[socket.id]}  joins the chat`,
     // });
